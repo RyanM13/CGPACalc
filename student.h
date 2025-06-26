@@ -1,6 +1,5 @@
 // including header files
 #include <string>
-#include <vector>
 // Creating class Student
 class Student {
 

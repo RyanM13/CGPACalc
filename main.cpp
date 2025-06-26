@@ -28,8 +28,9 @@ void dialog(Student &user) {
     user.CalculateQuality(hours, grade);
 
     cout << "Stop Y/N? ";
-    cout << endl;
     cin >> sentinel;
+    // Provides a cleaner print
+    cout << endl;
   }
 }
 
