@@ -24,3 +24,9 @@ print your GPA for your current semester.
 - Better validation checking
 - Show calculations
 
+## Example Usage
+
+<img width="684" alt="Screenshot 2025-06-26 at 10 56 49 AM" src="https://github.com/user-attachments/assets/fc6d0382-f5d5-4ef2-add7-65aea1624fa1" />
+
+
+
