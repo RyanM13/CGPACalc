@@ -6,6 +6,21 @@ print your GPA for your current semester.
 
 ## Libraries Used
 
-cctype: Used for touppper function, makes all characters uppercase
-string: Used to have access to std::string.
-iostream: Used to have access to std::cout and std::cin
+- `cctype`: Used for `toupper()` function, makes all characters uppercase.
+- `string`: Used to use `std::string`.
+- `iostream`: Used for input/output like `std::cin` and `std::cout`.
+
+## Features
+
+- Uses a 4.0 GPA scale
+- Allows user to enter values in a loop
+- Calculates the GPA for the current semester
+- Allows for both upper and lower case letter grades.
+
+## Possible additions
+
+- Create a gui version
+- Allow for cumulative GPA
+- Better validation checking
+- Show calculations
+
