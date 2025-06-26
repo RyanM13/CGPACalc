@@ -35,7 +35,9 @@ void dialog(Student &user) {
 }
 
 // Setting up the user with a name and GPA, sending them to the class side
-void setup(Student &user, string name, int total_hours) {
+void setup(Student &user) {
+  string name;
+  int total_hours;
   cout << "Please enter your name: ";
   getline(cin, name);
   cout << "Please enter your total GPA hours: ";
@@ -45,7 +47,7 @@ void setup(Student &user, string name, int total_hours) {
 }
 
 // Print statement that calls a method to calculate the new GPA
-void print(Student user) {
+void print(Student &user) {
   cout << "Your update cumulative GPA is: " << user.CalculateGPA();
 }
 
@@ -53,11 +55,9 @@ void print(Student user) {
 int main() {
 
   // Establishing variables
-  string name;
-  int total_hours;
   Student user;
 
-  setup(user, name, total_hours);
+  setup(user);
   dialog(user);
   print(user);
 
