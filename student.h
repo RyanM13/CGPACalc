@@ -6,7 +6,7 @@ class Student {
 
   // Establishing private variables
 private:
-  std::string name = " ";
+  std::string name;
   double update;
   int total_hours;
 

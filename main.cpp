@@ -13,7 +13,7 @@ void dialog(Student &user) {
   int hours = 0;
 
   cout << "Hello " << user.getName();
-  cout << "Please enter the information for each class individually";
+  cout << "\nPlease enter the information for each class individually";
   cout << "\n---------------------------------------------\n";
 
   // While loop runs until user decides to stop it
@@ -21,20 +21,21 @@ void dialog(Student &user) {
     cout << "Hour count: ";
     cin >> hours;
 
-    cout << " Please enter your letter grade: ";
+    cout << "Please enter your letter grade: ";
     cin >> grade;
 
     // Method in Student.cpp to calculate the GPA quality
     user.CalculateQuality(hours, grade);
 
     cout << "Stop Y/N? ";
+    cout << endl;
     cin >> sentinel;
   }
 }
 
 // Setting up the user with a name and GPA, sending them to the class side
 void setup(Student &user, string name, int total_hours) {
-  cout << "Please enter your name: \n";
+  cout << "Please enter your name: ";
   getline(cin, name);
   cout << "Please enter your total GPA hours: ";
   cin >> total_hours;
