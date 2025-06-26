@@ -1,23 +1,24 @@
-
+// including header files
 #include <string>
 #include <vector>
+// Creating class Student
 class Student {
 
+  // Establishing private variables
 private:
-  int size = 0;
   std::string name = " ";
-  double GPA = 0.00;
-  std::vector<float> grades;
+  double update;
+  int total_hours;
 
+  // Establishing public methods.
 public:
   Student();
-  Student(std::string name, double gpa);
+  Student(std::string name, int total_hours);
   ~Student() {}
 
-  void setGrades(std::vector<float> grades);
   void setName(std::string name);
-  void setGPA(double GPA);
-  double getGPA();
-  double CalculateGPA();
+  void setGPAHours(int total_hours);
+  float CalculateGPA();
+  void CalculateQuality(int, char);
   std::string getName();
 };

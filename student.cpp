@@ -1,36 +1,61 @@
+// Include header files
 #include "student.h"
-#include <numeric>
-#include <string>
-#include <vector>
 
+// Needed for std::toupper
+#include <cctype>
+#include <iostream>
+#include <string>
+
+// Default constructor
 Student::Student() {
   name = "Jane Doe";
-  GPA = 3.75;
+  total_hours = 18;
 }
-Student::Student(std::string name, double gpa) {
+
+// Parameterized constructor
+Student::Student(std::string name, int total_hours) {
   this->name = name;
-  this->GPA = gpa;
+  this->total_hours = total_hours;
 }
 
-void Student::setGrades(std::vector<float> user_grades) {
-  grades = user_grades;
+// Calcualating GPA taking quality points and dividing by total GPA hours
+float Student::CalculateGPA() { return update / total_hours; }
+
+// Caclulating quality points
+void Student::CalculateQuality(int hours, char grade) {
+  // Takes the char "grade" and changes it to uppercase
+  grade = std::toupper(grade);
+
+  /* Switch statement to calculate quality points per GPA hour
+   Using a switch statment but there is probably a better way to do this.
+   need to think about it a little more*/
+
+  switch (grade) {
+  case 'A':
+    update += 4.0 * hours;
+    break;
+  case 'B':
+    update += 3.0 * hours;
+    break;
+  case 'C':
+    update += 2.0 * hours;
+    break;
+  case 'D':
+    update += 1.0 * hours;
+    break;
+  case 'F':
+  default:
+    update += 0.0 * hours;
+    break;
+  }
+
+  return;
 }
 
-double Student::CalculateGPA() {
-  if (grades.empty())
-    return 0.0;
-
-  double sum;
-  sum = std::accumulate(grades.begin(), grades.end(), 0.0);
-  double newGPA = sum / grades.size();
-
-  return newGPA;
-}
-
+// Setting private variable to main variable
+void Student::setGPAHours(int total_hours) { this->total_hours = total_hours; }
+// Setting private variable to main variable
 void Student::setName(std::string name) { this->name = name; }
 
-void Student::setGPA(double GPA) { this->GPA = GPA; }
-
+// Gets name from private variable
 std::string Student::getName() { return name; }
-
-double Student::getGPA() { return GPA; }
